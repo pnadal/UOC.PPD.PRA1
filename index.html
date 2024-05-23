@@ -3,13 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Plataformas de Publicación y Distribución – PRA1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        video {
+            border: 2px solid #000;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+    </style>
 </head>
 <body>
-    <h1>Vídeo incrustado en HTML5</h1>
-    <video controls width="600">
+    <h1>Mallorca a vista de pájaro</h1>
+    <video id="myVideo" controls width="600" autoplay loop muted poster="logo-uoc.jpg">
         <source src="Mallorca-Drone.mp4" type="video/mp4">
         <source src="Mallorca-Drone.webm" type="video/webm">
-        <p>Your browser cannot play the provided video file.</p>
+        Tu navegador no soporta la etiqueta de vídeo HTML5.
     </video>
+    <br>
+    <button onclick="playPause()">Play/Pause</button>
+    <button onclick="makeBig()">Big</button>
+    <button onclick="makeSmall()">Small</button>
+    <button onclick="makeNormal()">Normal</button>
+
+    <script>
+        var myVideo = document.getElementById("myVideo");
+
+        function playPause() {
+            if (myVideo.paused)
+                myVideo.play();
+            else
+                myVideo.pause();
+        }
+
+        function makeBig() {
+            myVideo.width = 800;
+        }
+
+        function makeSmall() {
+            myVideo.width = 320;
+        }
+
+        function makeNormal() {
+            myVideo.width = 600;
+        }
+    </script>
 </body>
 </html>
